@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TableViewController.swift
 //  ESPBluefiSample
 //
 //  Created by joey on 10/20/20.
@@ -9,13 +9,22 @@
 import UIKit
 import ESPBluefi
 
-class ViewController: UIViewController {
+class TableViewController: UITableViewController {
+    private var dataSource: [ESPPeripheral] = []
+    private var espFBYBleHelper: ESPFBYBLEHelper?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        espFBYBleHelper = ESPFBYBLEHelper.share()
     }
 
-
+    private func scanDeviceInfo() {
+        dataSource.removeAll()
+        espFBYBleHelper?.startScan({ peripheral in
+            self.dataSource.append(peripheral)
+            self.tableView.reloadData()
+        })
+    }
 }
 
