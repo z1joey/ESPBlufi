@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i3x-YY-cpN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -71,8 +72,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I1s-eg-9gS">
-                                <rect key="frame" x="0.0" y="88" width="414" height="719"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="8BP-Fp-IWJ">
+                                    <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="oAh-7L-coF">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -83,9 +89,12 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="StF-m5-giv" id="fMS-g0-jYn"/>
+                                </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="uoI-L0-NkL">
-                                <rect key="frame" x="39" y="815" width="336" height="61"/>
+                                <rect key="frame" x="39" y="791" width="336" height="61"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xWU-Fp-OlO">
                                         <rect key="frame" x="0.0" y="0.0" width="336" height="30"/>
@@ -119,9 +128,10 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XM2-hv-lNW">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="30"/>
-                                                <state key="normal" title="Bluefi"/>
+                                                <state key="normal" title="Bluefi(STA)"/>
                                                 <connections>
                                                     <action selector="bluefiAction:" destination="StF-m5-giv" eventType="touchUpInside" id="aC4-MY-GBT"/>
+                                                    <segue destination="yQP-K1-MPY" kind="show" id="IQg-vz-0YF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XU6-jH-faz">
@@ -143,7 +153,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="uoI-L0-NkL" secondAttribute="bottom" constant="20" symbolic="YES" id="8BH-hc-1O4"/>
+                            <constraint firstAttribute="bottom" secondItem="uoI-L0-NkL" secondAttribute="bottom" constant="44" id="8BH-hc-1O4"/>
                             <constraint firstItem="uoI-L0-NkL" firstAttribute="top" secondItem="I1s-eg-9gS" secondAttribute="bottom" constant="8" symbolic="YES" id="DNN-sq-mIA"/>
                             <constraint firstItem="I1s-eg-9gS" firstAttribute="leading" secondItem="vpT-sH-m9R" secondAttribute="leading" id="NJ7-cd-RtH"/>
                             <constraint firstItem="I1s-eg-9gS" firstAttribute="top" secondItem="vpT-sH-m9R" secondAttribute="top" id="R3X-PJ-YYn"/>
@@ -160,6 +170,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uc3-mJ-DPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2087" y="153"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RUn-5A-eUY">
+            <objects>
+                <viewController id="yQP-K1-MPY" customClass="STAViewController" customModule="ESPBluefiSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zdL-pr-all">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tNt-IP-mmt">
+                                <rect key="frame" x="97" y="437" width="220" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wifi SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HkS-8Q-K6G">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="XIA-He-I2L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wifi Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-hF-IZm">
+                                        <rect key="frame" x="0.0" y="42" width="220" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="uEn-AI-etd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obQ-rp-LnF">
+                                <rect key="frame" x="188.5" y="533" width="37" height="30"/>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="yQP-K1-MPY" eventType="touchUpInside" id="84v-h1-hUh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="obQ-rp-LnF" firstAttribute="top" secondItem="tNt-IP-mmt" secondAttribute="bottom" constant="20" id="VR2-Zo-kpN"/>
+                            <constraint firstItem="obQ-rp-LnF" firstAttribute="centerX" secondItem="2b6-dL-ENv" secondAttribute="centerX" id="ddK-60-gO2"/>
+                            <constraint firstItem="tNt-IP-mmt" firstAttribute="centerX" secondItem="2b6-dL-ENv" secondAttribute="centerX" id="ols-VX-fC4"/>
+                            <constraint firstItem="tNt-IP-mmt" firstAttribute="centerY" secondItem="2b6-dL-ENv" secondAttribute="centerY" id="yvN-GM-xOz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2b6-dL-ENv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="V9U-Uc-TQI"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="eLe-hF-IZm" id="RwS-uD-vvI"/>
+                        <outlet property="ssidTextField" destination="HkS-8Q-K6G" id="UgY-eI-1Ee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLR-eD-kdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3010" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JRD-Dy-gkJ">

@@ -121,6 +121,7 @@
 		D47FD809253F030D0000D69E /* ESPDataConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = D47FD7AC253F030D0000D69E /* ESPDataConversion.h */; };
 		D47FD80A253F030D0000D69E /* ESPFBYBLEHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D47FD7AD253F030D0000D69E /* ESPFBYBLEHelper.h */; };
 		D47FD8FA254038AB0000D69E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FD8F9254038AB0000D69E /* DetailViewController.swift */; };
+		D47FD8FC254138AA0000D69E /* STAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FD8FB254138AA0000D69E /* STAViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D434BEFE25417379003BB058 /* ESPBluefiSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ESPBluefiSample.entitlements; sourceTree = "<group>"; };
 		D47FD582253EFA1F0000D69E /* ESPBluefi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESPBluefi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47FD585253EFA1F0000D69E /* ESPBluefi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESPBluefi.h; sourceTree = "<group>"; };
 		D47FD586253EFA1F0000D69E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		D47FD7AD253F030D0000D69E /* ESPFBYBLEHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPFBYBLEHelper.h; sourceTree = "<group>"; };
 		D47FD8F3253FD3810000D69E /* ESPBluefiSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESPBluefiSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		D47FD8F9254038AB0000D69E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D47FD8FB254138AA0000D69E /* STAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STAViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,10 +324,12 @@
 		D47FD592253EFA560000D69E /* ESPBluefiSample */ = {
 			isa = PBXGroup;
 			children = (
+				D434BEFE25417379003BB058 /* ESPBluefiSample.entitlements */,
 				D47FD8F3253FD3810000D69E /* ESPBluefiSample-Bridging-Header.h */,
 				D47FD593253EFA560000D69E /* AppDelegate.swift */,
 				D47FD597253EFA560000D69E /* TableViewController.swift */,
 				D47FD8F9254038AB0000D69E /* DetailViewController.swift */,
+				D47FD8FB254138AA0000D69E /* STAViewController.swift */,
 				D47FD599253EFA560000D69E /* Main.storyboard */,
 				D47FD59C253EFA580000D69E /* Assets.xcassets */,
 				D47FD59E253EFA580000D69E /* LaunchScreen.storyboard */,
@@ -732,6 +737,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D47FD8FA254038AB0000D69E /* DetailViewController.swift in Sources */,
+				D47FD8FC254138AA0000D69E /* STAViewController.swift in Sources */,
 				D47FD598253EFA560000D69E /* TableViewController.swift in Sources */,
 				D47FD594253EFA560000D69E /* AppDelegate.swift in Sources */,
 			);
@@ -951,6 +957,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ESPBluefiSample/ESPBluefiSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5FHURKJ96D;
 				ENABLE_BITCODE = NO;
@@ -973,6 +980,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ESPBluefiSample/ESPBluefiSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5FHURKJ96D;
 				INFOPLIST_FILE = ESPBluefiSample/Info.plist;

@@ -43,5 +43,11 @@
 	</array>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Bluetooth will be used for testing.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location will be used for testing.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location will be used for testing.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location will be used for testing.</string>
 </dict>
 </plist>
