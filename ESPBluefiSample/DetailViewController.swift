@@ -17,11 +17,6 @@ class DetailViewController: UIViewController {
     public var device: ESPPeripheral?
     public var isConnected: Bool = false
 
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        tableView.dataSource = self
-//    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let sta = segue.destination as? STAViewController {
             sta.paramsDelegate = self
@@ -36,7 +31,7 @@ class DetailViewController: UIViewController {
 
         blufiClient = BlufiClient()
         blufiClient?.centralManagerDelete = self
-        //blufiClient?.peripheralDelegate = self
+//        blufiClient?.peripheralDelegate = self
         blufiClient?.blufiDelegate = self
         blufiClient?.connect(device!.uuid.uuidString)
     }
@@ -139,6 +134,7 @@ extension DetailViewController: ConfigureParamsDelegate {
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = messages[indexPath.row]
         return cell
     }

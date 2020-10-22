@@ -81,6 +81,7 @@ extension STAViewController: CLLocationManagerDelegate {
             print("should go to setting")
         } else {
             ssidTextField.text = getSSID()
+            passwordTextField.text = "vpn4test"
         }
     }
 }
